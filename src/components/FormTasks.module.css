@@ -7,7 +7,7 @@
 .input {
   width: 39.875rem;
   margin-right: 0.5rem;
-  background: #262626;
+  background: var(--gray-500);
   border: none;
   height: 3.375rem;
   resize: none;
@@ -17,8 +17,8 @@
 
 .button {
   font-size: 0.875rem;
-  color: white;
-  background: #1e6f9f;
+  color: var(--white);
+  background: var(--blue-200);
   border-radius: 0.5rem;
   border: none;
   width: 5.625rem;
