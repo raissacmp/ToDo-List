@@ -1,5 +1,6 @@
 import { Header } from "./components/Header";
 import { FormTasks } from "./components/FormTasks";
+import { Tasks } from "./components/Tasks";
 
 // import styles from "./App.module.css";
 
@@ -10,6 +11,7 @@ function App() {
     <>
       <Header />
       <FormTasks />
+      <Tasks />
     </>
   );
 }
