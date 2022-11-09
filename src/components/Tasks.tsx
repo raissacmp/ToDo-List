@@ -24,14 +24,19 @@ export function Tasks() {
       </header>
       {tasks.map((task: TaskProps) => (
         <div key={task.id} className={styles.contentTask}>
-          <input
-            type="checkbox"
-            checked={task.completed}
-            onChange={(event: ChangeEvent<HTMLInputElement>) => {
-              handleChangeTasks(task, event.target.checked);
-            }}
-          />
-          <p className={styles.textTask}>{task.title}</p>
+          <div className={styles.contentInitialContainerTask}>
+            <label className={styles.container}>
+              <input
+                type="checkbox"
+                checked={task.completed}
+                onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                  handleChangeTasks(task, event.target.checked);
+                }}
+              />
+              <span className={styles.checkmark}></span>
+            </label>
+            <p className={styles.textTask}>{task.title}</p>
+          </div>
           <Trash color="gray" size={20} />
         </div>
       ))}
