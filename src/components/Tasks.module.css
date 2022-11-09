@@ -135,3 +135,12 @@
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+@media (max-width: 768px) {
+  .headerTasks {
+    padding: 0 5%;
+  }
+  .contentTask {
+    width: 90%;
+  }
+}

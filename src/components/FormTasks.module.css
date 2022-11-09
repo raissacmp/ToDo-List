@@ -33,3 +33,10 @@
 .button svg {
   margin-left: 0.5rem;
 }
+
+@media (max-width: 768px) {
+  .form,
+  .button {
+    padding: 0 5%;
+  }
+}
