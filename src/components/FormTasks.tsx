@@ -11,6 +11,9 @@ export function FormTasks() {
 
   function handleTaskChange(event: ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (!taskNewValue.trim()) {
+      return alert("Esse campo precisa ser preenchido!");
+    }
     createTasks(taskNewValue); //atualizando o estado pela função
     setTaskNewValue("");
   }
