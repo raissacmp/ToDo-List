@@ -27,6 +27,7 @@
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .button svg {
