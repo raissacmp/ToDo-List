@@ -3,6 +3,7 @@ import styles from "./Tasks.module.css";
 import { Trash } from "phosphor-react";
 import { useTasks } from "../hooks/useTask";
 import { TaskProps } from "../contexts/TasksContext";
+import { EmptyTasks } from "./EmptyTasks";
 
 export function Tasks() {
   const { tasks, handleChangeTasks, handleDeleteTask } = useTasks();
@@ -51,6 +52,7 @@ export function Tasks() {
           </button>
         </div>
       ))}
+      {tasks.length === 0 && <EmptyTasks />}
     </div>
   );
 }
