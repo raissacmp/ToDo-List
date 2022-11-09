@@ -5,7 +5,7 @@ import { useTasks } from "../hooks/useTask";
 import { TaskProps } from "../contexts/TasksContext";
 
 export function Tasks() {
-  const { tasks, handleChangeTasks } = useTasks();
+  const { tasks, handleChangeTasks, handleDeleteTask } = useTasks();
 
   const completedTasks = tasks.filter((task) => task.completed === true).length; // deescobrir as tasks ticadas
 
@@ -35,9 +35,20 @@ export function Tasks() {
               />
               <span className={styles.checkmark}></span>
             </label>
-            <p className={styles.textTask}>{task.title}</p>
+            <p
+              className={
+                task.completed ? styles.textTaskNoCompleted : styles.textTask
+              }
+            >
+              {task.title}
+            </p>
           </div>
-          <Trash color="gray" size={20} />
+          <button
+            onClick={() => handleDeleteTask(task.id)}
+            className={styles.deleteTask}
+          >
+            <Trash color="gray" size={20} />
+          </button>
         </div>
       ))}
     </div>

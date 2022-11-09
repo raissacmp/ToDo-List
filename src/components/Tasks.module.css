@@ -59,6 +59,17 @@
   align-items: center;
 }
 
+.deleteTask {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.textTaskNoCompleted {
+  color: var(--gray-300);
+  text-decoration: line-through;
+}
+
 /*  checkbox */
 
 .container {

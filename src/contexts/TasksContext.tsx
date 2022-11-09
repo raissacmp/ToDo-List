@@ -4,6 +4,7 @@ export interface TaskContextDataProps {
   tasks: TaskProps[];
   createTasks: (task: string) => void; //tipar a função e os parametros
   handleChangeTasks: (task: TaskProps, completed: boolean) => void; //tipar a função e os parametros
+  handleDeleteTask: (taskId?: string) => void; //tipar a função e os parametros
 }
 
 interface TaskProviderProps {
@@ -40,12 +41,18 @@ export function TaskContextProvider({ children }: TaskProviderProps) {
     });
   };
 
+  function handleDeleteTask(taskId?: string) {
+    const deleteTask = tasks.filter((task) => task.id !== taskId);
+    setTasks(deleteTask);
+  }
+
   return (
     <TaskContext.Provider
       value={{
         tasks,
         createTasks,
         handleChangeTasks,
+        handleDeleteTask,
       }}
     >
       {children}
